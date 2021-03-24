@@ -40,6 +40,20 @@ public:
         inorder(root->right);
     }
 
+    bool searchBST(BStree *root, int element){
+        if(root == NULL)
+            return false;
+
+        if(root->data == element)
+            return true;
+
+        if(element > root->data)
+            return searchBST(root->right, element);
+
+        if(element < root->data)
+            return searchBST(root->left, element);
+    }
+
 };
 
 int main(){
@@ -55,4 +69,7 @@ int main(){
     b.insert(root, 14);
 
     b.inorder(root);
+
+    cout<<b.searchBST(root, 15)<<endl;
+    cout<<b.searchBST(root, 99);
 }
