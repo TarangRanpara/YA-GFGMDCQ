@@ -27,9 +27,6 @@ void selectionSort(vector<int> &arr){
         if(min != i)
             swap_util(arr[min], arr[i]);
     }
-
-
-
 }
 
 int main(){
